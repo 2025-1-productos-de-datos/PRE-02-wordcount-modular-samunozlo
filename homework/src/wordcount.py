@@ -2,7 +2,7 @@
 import os
 
 from homework.src._internals.write_count_words import write_count_words
-
+from homework.src._internals.read_all_lines import read_all_lines
 
 
 
@@ -36,15 +36,6 @@ def main():
     ##
     write_count_words(counter)
 
-def read_all_lines():
-    all_lines = []
-    input_file_list = os.listdir("data/input/")
-    for filename in input_file_list:
-        file_path = os.path.join("data/input", filename)
-        with open(file_path, "r", encoding="utf-8") as f:
-            lines = f.readlines()
-            all_lines.extend(lines)
-    return all_lines
 
 
 if __name__ == "__main__":
