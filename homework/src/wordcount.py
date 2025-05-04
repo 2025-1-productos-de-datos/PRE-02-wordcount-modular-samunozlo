@@ -3,26 +3,23 @@ import os
 
 from homework.src._internals.write_count_words import write_count_words
 from homework.src._internals.read_all_lines import read_all_lines
-
-
+from homework.src._internals.preprocess_lines import preprocess_lines
+from homework.src._internals.split_in_words import split_in_words
+from homework.src._internals.count_words import count_words
 
 def main():
 
-    ## read all lines
+    ## read_all_lines
     all_lines = read_all_lines()
 
-    ## preprocess lines
-    all_lines = [line.lower().strip() for line in all_lines]
+    ## preprocess_lines
+    all_lines = preprocess_lines(all_lines)
 
-    ## split in words
-    words = []
-    for line in all_lines:
-        words.extend(word.strip(",.!?") for word in line.split())
+    ## split_in_words
+    words = split_in_words(all_lines)
 
-    ## count words
-    counter = {}
-    for word in words:
-        counter[word] = counter.get(word, 0) + 1
+    ## count_words
+    counter = count_words(words)
 
     # count the frequency of the words in the files in the input directory
     # counter = {}
@@ -35,6 +32,12 @@ def main():
 
     ##
     write_count_words(counter)
+
+
+
+
+
+
 
 
 
