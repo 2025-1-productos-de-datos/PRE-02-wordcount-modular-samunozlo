@@ -1,6 +1,6 @@
 import os
 
-def write_count_words(counter,output_folder):
+def write_word_counts(counter,output_folder):
     # Crear carpeta si no existe
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
