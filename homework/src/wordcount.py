@@ -10,7 +10,7 @@ from homework.src._internals.count_words import count_words
 
 def main():
     if len(sys.argv) != 3:
-        print("Usage: py -m homework <input_folder> <output_folder>")
+        print("Usage: python3 -m homework <input_folder> <output_folder>")
         sys.exit(1)
 
     input_folder = sys.argv[1]
@@ -21,9 +21,6 @@ def main():
     all_lines = preprocess_lines(all_lines)
     words = split_into_words(all_lines)
     counter = count_words(words)
-
-
-    ##
     write_word_counts(counter,output_folder)
 
 
